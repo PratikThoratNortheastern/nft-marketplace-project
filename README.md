@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+#  NFT Marketplace 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application is a decentralized NFT marketplace that allows users to create their own NFT collection from images at an IPFS url and view their NFT collection. It also allows the user to buy NFTs using ETH/ERC20 tokens. The app is hosted on IPFS at https://cf-ipfs.com/ipfs/bafybeign6iwkwdkwdj2472fser7izm6c4sqblbw6mo3yfx3zpxvyzw7pda
 
-## Available Scripts
+Note: For part B: I have implemented the add on functionality where users can pay for NFTs using ERC20 tokens
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Mint NFTs with custom images and metadata.
+- List your NFTs for sale.
+- Buy NFTs from the marketplace using ETH/ERC20 tokens.
+- View your NFT collection.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- Smart Contracts: Solidity
+- Frontend: ReactJS
+- IPFS: For storing NFT images and metadata 
+- Blockchain: Sepolia Testnet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Contract links
+- ERC20 token contract: https://sepolia.etherscan.io/address/0x0C0c99A909606DdFE18432160D821A6301CE5FE8
+- NFT Marketplace ERC20 Payment contract: https://sepolia.etherscan.io/address/0xD2C7847405021506A8A3481A0c5652bE998e4860
+- Marketplace contract: https://sepolia.etherscan.io/address/0x8630802c3C34Ce0DA6FA6B7761db0Df3cf70BBd9
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [MetaMask](https://metamask.io/) Ethereum wallet provider.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To set up the repository, run the below
+```bash
+git clone https://github.com/sushma110396/NFT-Project.git
+cd NFT-Project
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a new .env file in the root of your project, which is right inside the NFT-Project folder, and add:
+1)The Alchemy API URL 
+2)The private key of the MetaMask wallet
+3)API key of your Pinata account
+4)Pinata secret
 
-### `npm run eject`
+When you're done, your .env file should look like this:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+REACT_APP_ALCHEMY_API_URL="<YOUR_API_URL>"
+REACT_APP_PRIVATE_KEY="<YOUR_PRIVATE_KEY>"
+REACT_APP_PINATA_KEY="<YOUR_PINATA_KEY>"
+REACT_APP_PINATA_SECRET="<YOUR_PINATA_SECRET>"
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+On running npm start,the app should be available at [Localhost](http://localhost:3000/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Note: I have used Cloudfare Ipfs to upload the images and metadata to IPFS. (It has been configured in utils.js file) . If cloudfare service is down, then the images for the NFTs might not load properly.
+To check if the cloudfare ipfs service is available, please use this link- [Public gateway checker](https://ipfs.github.io/public-gateway-checker/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Guide to use the application:
+1)Once the app loads, connect your metamask wallet by clicking "Connect Wallet" button. Make sure you have sufficient ETH in your wallet. Also, ensure you are on the Sepolia test network.
 
-## Learn More
+2)Go to List My NFT tab and add your NFT to the marketplace by filling in the form.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![List NFT](https://github.com/sushma110396/NFT-Project/assets/122709593/8bf64e07-cd46-4143-86ff-96c401e8a4f1)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3)Once your NFT is successfully listed on the marketplace, you can view the NFT on the Marketplace tab.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![marketplace](https://github.com/sushma110396/NFT-Project/assets/122709593/f460cbc2-10a2-41ef-941b-43dc7198eed3)
 
-### Analyzing the Bundle Size
+4)Click on any of the NFT images to view the NFT detail page. Now switch to a different account on your wallet to test the Buy NFT functionality. You can buy NFT using either ETH/ERC20 tokens by choosing the appropriate option from the dropdown and clicking on the buy button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Buy NFT](https://github.com/sushma110396/NFT-Project/assets/122709593/e8c1b5f2-a4f3-49f3-99a9-86180243e771)
