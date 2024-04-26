@@ -126,13 +126,13 @@ export default function SellNFT() {
     <div className="">
       <Navbar></Navbar>
       <div className="mt-20 flex flex-col place-items-center" id="nftForm">
-        <form className="bg-red-300 shadow-md rounded px-8 pt-4 pb-8 mb-4">
-          <h3 className="text-center text-2xl font-bold text-purple-700 mb-8">
+        <form className="bg-indigo-500 shadow-lg rounded-lg px-8 pt-4 pb-8 mb-4">
+          <h3 className="text-center text-2xl font-bold text-white mb-8">
             Upload your NFT to the marketplace
           </h3>
           <div className="mb-4">
             <label
-              className="block text-purple-500 text-lg font-bold mb-2"
+              className="block text-white text-lg font-bold mb-2"
               htmlFor="name"
             >
               NFT Name
@@ -150,7 +150,7 @@ export default function SellNFT() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-purple-500 text-lg font-bold mb-2"
+              className="block text-white text-lg font-bold mb-2"
               htmlFor="description"
             >
               NFT Description
@@ -170,7 +170,7 @@ export default function SellNFT() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-purple-500 text-lg font-bold mb-2"
+              className="block text-white text-lg font-bold mb-2"
               htmlFor="price"
             >
               Price (in ETH/ERC20 Token)
@@ -188,7 +188,7 @@ export default function SellNFT() {
           </div>
           <div>
             <label
-              className="block text-purple-500 text-lg font-bold mb-2"
+              className="block text-white text-lg font-bold mb-2"
               htmlFor="image"
             >
               Upload Image (&lt;500 KB)
@@ -196,10 +196,10 @@ export default function SellNFT() {
             <input type={"file"} onChange={OnChangeFile}></input>
           </div>
           <br></br>
-          <div className="text-red-500 text-center">{message}</div>
+          <div className="text-red-600 text-xl text-center">{message}</div>
           <button
             onClick={listNFT}
-            className="font-bold mt-10 w-full bg-purple-500 text-white hover:bg-white hover:text-purple-500 rounded p-2 shadow-lg"
+            className="font-bold mt-10 w-full bg-purple-700 text-white hover:bg-white hover:text-purple-500 rounded p-2 shadow-lg"
             id="list-button"
           >
             List NFT
