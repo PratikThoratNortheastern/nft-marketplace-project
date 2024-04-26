@@ -126,7 +126,7 @@ export default function SellNFT() {
     <div className="">
       <Navbar></Navbar>
       <div className="mt-20 flex flex-col place-items-center" id="nftForm">
-        <form className="bg-indigo-500 shadow-lg rounded-lg px-8 pt-4 pb-8 mb-4">
+        <form className="bg-indigo-600 shadow-lg rounded-lg px-8 pt-4 pb-8 mb-4">
           <h3 className="text-center text-2xl font-bold text-white mb-8">
             Upload your NFT to the marketplace
           </h3>
