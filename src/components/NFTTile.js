@@ -14,7 +14,7 @@ function NFTTile(data) {
         <img
           src={IPFSUrl}
           alt=""
-          className="z-0 w-96 h-96 rounded-lg object-cover"
+          className="z-0 w-96 h-80 rounded-lg object-cover"
           crossOrigin="anonymous"
         />
         <div className="text-white w-full p-2 bg-gradient-to-t from-[#454545] to-transparent rounded-lg pt-5 -mt-20 z-10">
