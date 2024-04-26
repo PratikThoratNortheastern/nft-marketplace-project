@@ -68,8 +68,8 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="w-screen">
-        <ul className="flex items-end justify-between py-3 nav-animation text-white pr-5">
+      <nav className="w-screen z-50 nav-animation">
+        <ul className="flex items-end justify-between py-3  text-white pr-5">
           <li className="flex items-end ml-5 pb-2">
             <Link to="/">
               <div className="inline-block font-bold text-xl ml-2">
