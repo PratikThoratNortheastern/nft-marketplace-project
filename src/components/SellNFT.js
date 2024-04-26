@@ -125,20 +125,20 @@ export default function SellNFT() {
   return (
     <div className="">
       <Navbar></Navbar>
-      <div className="mt-20 flex flex-col place-items-center" id="nftForm">
-        <form className="bg-indigo-600 shadow-lg rounded-lg px-8 pt-4 pb-8 mb-4">
-          <h3 className="text-center text-2xl font-bold text-white mb-8">
+      <div className=" mt-20 flex flex-col place-items-center" id="nftForm">
+        <form className="bg-indigo-100 shadow-lg text-center rounded-lg px-8 pt-4 pb-8 mb-4 mt-4">
+          <h3 className="text-center text-2xl font-bold text-black mb-8">
             Upload your NFT to the marketplace
           </h3>
           <div className="mb-4">
             <label
-              className="block text-white text-lg font-bold mb-2"
+              className="block text-black text-lg font-bold mb-2"
               htmlFor="name"
             >
               NFT Name
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-indigo-500 border-2"
               id="name"
               type="text"
               placeholder="Nature Art #1"
@@ -150,13 +150,13 @@ export default function SellNFT() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-white text-lg font-bold mb-2"
+              className="block text-black text-lg font-bold mb-2"
               htmlFor="description"
             >
               NFT Description
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border-indigo-500 border-2 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               cols="40"
               rows="5"
               id="description"
@@ -170,13 +170,13 @@ export default function SellNFT() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-white text-lg font-bold mb-2"
+              className="block text-black text-lg font-bold mb-2"
               htmlFor="price"
             >
               Price (in ETH/ERC20 Token)
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border-indigo-500 border-2 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="number"
               placeholder="Min 0.01"
               step="0.01"
@@ -188,7 +188,7 @@ export default function SellNFT() {
           </div>
           <div>
             <label
-              className="block text-white text-lg font-bold mb-2"
+              className="block text-black text-lg font-bold mb-2"
               htmlFor="image"
             >
               Upload Image (&lt;500 KB)
@@ -199,10 +199,10 @@ export default function SellNFT() {
           <div className="text-red-600 text-xl text-center">{message}</div>
           <button
             onClick={listNFT}
-            className="font-bold mt-10 w-full bg-purple-700 text-white hover:bg-white hover:text-purple-500 rounded p-2 shadow-lg"
+            className="font-bold mt-10 bg-black text-white hover:bg-white hover:text-black rounded p-2 shadow-lg w-max"
             id="list-button"
           >
-            List NFT
+            List Your NFT
           </button>
         </form>
       </div>
