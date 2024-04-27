@@ -27,7 +27,7 @@ export default function SellNFT() {
   async function enableButton() {
     const listButton = document.getElementById("list-button");
     listButton.disabled = false;
-    listButton.style.backgroundColor = "#A500FF";
+    listButton.style.backgroundColor = "#000000";
     listButton.style.opacity = 1;
   }
 
@@ -38,7 +38,7 @@ export default function SellNFT() {
     try {
       //upload the file to IPFS
       disableButton();
-      updateMessage("Uploading image.. please dont click anything!");
+      updateMessage("Uploading image");
       const response = await uploadFileToIPFS(file);
       if (response.success === true) {
         enableButton();
@@ -91,7 +91,7 @@ export default function SellNFT() {
       const signer = provider.getSigner();
       disableButton();
       updateMessage(
-        "Uploading NFT(takes 5 mins).. please dont click anything!"
+        "Uploading NFT"
       );
 
       //Pull the deployed contract instance
@@ -112,7 +112,7 @@ export default function SellNFT() {
       });
       await transaction.wait();
 
-      alert("Successfully listed your NFT!");
+      alert("Successfully listed your NFT on the Marketplace!");
       enableButton();
       updateMessage("");
       updateFormParams({ name: "", description: "", price: "" });
@@ -122,10 +122,10 @@ export default function SellNFT() {
     }
   }
 
-  console.log("Working", process.env);
+  //console.log("Working", process.env);
   return (
     <div className="">
-      <Navbar></Navbar>
+      <Navbar/>
       <div className=" mt-20 flex flex-col place-items-center" id="nftForm">
         <form className="shadow-lg border-black border-2 w-2/5 text-center rounded-lg px-8 pt-4 pb-8 mb-4 mt-4">
           <h3 className="text-center text-2xl font-bold text-black mb-8">
@@ -142,7 +142,7 @@ export default function SellNFT() {
               className="shadow appearance-none rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-black border-2"
               id="name"
               type="text"
-              placeholder="Nature Art #1"
+              placeholder="Image Name"
               onChange={(e) =>
                 updateFormParams({ ...formParams, name: e.target.value })
               }
@@ -162,7 +162,7 @@ export default function SellNFT() {
               rows="5"
               id="description"
               type="text"
-              placeholder="Mountains"
+              placeholder="Image Description"
               value={formParams.description}
               onChange={(e) =>
                 updateFormParams({ ...formParams, description: e.target.value })
@@ -179,7 +179,7 @@ export default function SellNFT() {
             <input
               className="shadow appearance-none border-black border-2 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="number"
-              placeholder="Min 0.01"
+              placeholder="Min 0.01 ETH"
               step="0.01"
               value={formParams.price}
               onChange={(e) =>
@@ -192,15 +192,15 @@ export default function SellNFT() {
               className="block text-black text-lg font-bold mb-2"
               htmlFor="image"
             >
-              Upload Image (&lt;500 KB)
+              Upload Image
             </label>
-            <input type={"file"} onChange={OnChangeFile}></input>
+            <input type={"file"} accept=".jpg, jpeg, .png" onChange={OnChangeFile}></input>
           </div>
           <br></br>
-          <div className="text-red-600 text-xl text-center">{message}</div>
+          <div className="text-white-600 text-xl text-center">{message}</div>
           <button
             onClick={listNFT}
-            className="font-bold mt-10 bg-black text-white hover:bg-white hover:text-indigo-900 rounded p-2 shadow-lg w-max"
+            className="font-bold mt-10 bg-black text-white hover:bg-black hover:text-white rounded text-xl p-2 shadow-lg w-max transition-transform transform hover:scale-110"
             id="list-button"
           >
             List Your NFT

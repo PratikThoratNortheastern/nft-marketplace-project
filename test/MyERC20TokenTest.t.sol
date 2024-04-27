@@ -29,6 +29,4 @@ contract MyERC20TokenTest {
         console.log("testAccount1 balance should be 100 tokens");
         require(balance == 100, "testAccount1 should have 100 tokens after transfer");
     }
-
-    // Write additional tests...
 }

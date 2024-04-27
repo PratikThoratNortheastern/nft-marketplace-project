@@ -1,5 +1,6 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import HuskyLogo from './HuskyLogo.png';
 import "./Navbar.css";
 function Navbar() {
   const [connected, setConnected] = useState(false);
@@ -68,17 +69,17 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="w-screen z-50 nav-animation">
-        <ul className="flex items-end justify-between py-3  text-white pr-5">
+      <nav className="w-screen z-50 nav-animation drop-shadow-xl">
+        <ul className="flex items-end justify-between py-3 text-white pr-5">
           <li className="flex items-end ml-5 pb-2">
             <Link to="/">
-              <div className="inline-block font-bold text-xl ml-2">
-                Husky Marketplace
+              <div className="inline-block font-bold text-xl ml-2 drop-shadow-xl">
+              <img src = {HuskyLogo} alt="Husky-Pride" width = {35} height = {35}/> Husky Marketplace
               </div>
             </Link>
           </li>
           <li className="w-2/6">
-            <ul className="lg:flex justify-between font-bold mr-10 text-lg">
+            <ul className="lg:flex justify-between font-bold mr-10 text-xl drop-shadow-xl">
               <li
                 className={
                   (location.pathname === "/"
@@ -91,7 +92,7 @@ function Navbar() {
               <li
                 className={
                   (location.pathname === "/sellNFT"
-                    ? "border-b-2 "
+                    ? "border-b-2 drop-shadow-xl"
                     : "hover:border-b-2 ") + "hover:pb-0 p-2"
                 }
               >
@@ -100,7 +101,7 @@ function Navbar() {
               <li
                 className={
                   (location.pathname === "/profile"
-                    ? "border-b-2 "
+                    ? "border-b-2 drop-shadow-xl"
                     : "hover:border-b-2 ") + "hover:pb-0 p-2"
                 }
               >
@@ -108,7 +109,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  className="enableEthereumButton bg-black text-white hover:bg-white hover:text-indigo-900 font-bold py-3 px-4 rounded text-sm hover:scale-110 hover:text-indigo-500 hover:bg-white"
+                  className="enableEthereumButton bg-black text-white hover:bg-white hover:text-indigo-900 font-bold py-3 px-4 rounded text-lg hover:scale-110 hover:text-indigo-500 hover:bg-white"
                   onClick={connectWebsite}
                 >
                   {connected ? "Connected" : "Connect Wallet"}
